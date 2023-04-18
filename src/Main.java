@@ -9,7 +9,7 @@ public class Main {
     ArrayList<String> LoggFilen = readLogfile();
 
     private ArrayList<String> readLogfile() {
-
+        return null;
     }
 
 }
