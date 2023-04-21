@@ -2,19 +2,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
+        ArrayList<String> LoggFilen = readLogfile();
+        System.out.println(LoggFilen.get(0));
     }
 
-    ArrayList<String> LoggFilen = readLogfile();
 
-    private ArrayList<String> readLogfile() {
+    private static ArrayList<String> readLogfile() {
 
         FileReader fr = null;
-        ArrayList<String>  meddelande;
+        ArrayList<String>  meddelande = new ArrayList<>();
         String m2;
         try {
             fr = new FileReader("ideaold.log");
@@ -22,11 +21,9 @@ public class Main {
             //meddelande += inFil.readLine();
             m2 = inFil.readLine();
             while (m2 != null) {
-                // read next line
                 // add into instead
-
-
-
+                meddelande.add(m2);
+                // read next line
                 m2 = inFil.readLine();
             }
 
