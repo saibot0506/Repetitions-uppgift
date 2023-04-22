@@ -8,8 +8,12 @@ public class Main {
         int AntalErrors = 0;
         ArrayList<String> LoggFilen = readLogfile();
         System.out.println(LoggFilen.get(0));
+
         AntalErrors = CountErrors(LoggFilen);
         System.out.println(AntalErrors + " Errors");
+
+        GetGitActivity(LoggFilen);
+
     }
 
 
@@ -48,15 +52,11 @@ public class Main {
    return Antal;
 
     }
-    public static int CountGithub(ArrayList<String> a) {
-        int Antal = 0;
-        for (int i = 0; i < a.size(); i++) {
-            if (a.get(i).contains("ERROR")) {
-                Antal++;
-            }
-        }
-        return Antal;
+    public static void GetGitActivity(ArrayList<String> a) {
+       for (String element: a){
+           if (element.contains("github")){
+               System.out.println(element);
+           }
+       }
     }
-
-
-    }
+}
