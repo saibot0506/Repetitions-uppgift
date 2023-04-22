@@ -13,6 +13,8 @@ public class Main {
         System.out.println(AntalErrors + " Errors");
 
         GetGitActivity(LoggFilen);
+        ArrayList<String> github = GetGitActivity(LoggFilen);
+        System.out.println(github);
 
     }
 
@@ -52,11 +54,13 @@ public class Main {
    return Antal;
 
     }
-    public static void GetGitActivity(ArrayList<String> a) {
-       for (String element: a){
+    public static ArrayList<String> GetGitActivity (ArrayList<String> a) {
+       ArrayList<String> GithubList = new ArrayList<>();
+        for (String element: a){
            if (element.contains("github")){
-               System.out.println(element);
+               GithubList.add(element + "\n");
            }
        }
+        return GithubList;
     }
 }
